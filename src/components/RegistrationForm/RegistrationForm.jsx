@@ -127,7 +127,16 @@ const RegistrationForm = () => {
                   Register
                 </Button>
               </Box>
-              <Link to="/" style={{ textDecoration: 'none', color: '#1976d2' }}>
+              <Link
+                to="/"
+                style={{
+                  textDecoration: 'none',
+                  color: '#1976d2',
+                  textAlign: 'center',
+                  display: 'block',
+                  marginTop: '20px',
+                }}
+              >
                 Home page
               </Link>
             </Form>
