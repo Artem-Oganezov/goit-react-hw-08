@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import s from './UserMenu.module.css';
-import { logoutThunk } from '../../redux/auth/operation';
+import { logoutThunk } from '../../redux/auth/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/selectors';
 

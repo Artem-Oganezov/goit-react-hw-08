@@ -2,7 +2,7 @@ import { MdDelete, MdPhoneInTalk } from 'react-icons/md';
 import s from './Contact.module.css';
 import { FaRegUser } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contacts/operation';
+import { deleteContact } from '../../redux/contacts/operations';
 import { Button } from '@mui/material';
 
 const Contact = ({ id, name, number }) => {

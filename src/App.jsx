@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { lazy, useEffect } from 'react';
-import { refreshThunk } from './redux/auth/operation';
+import { refreshThunk } from './redux/auth/operations';
 import { selectIsRefreshing, selectToken } from './redux/auth/selectors';
 import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';

@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { loginThunk } from '../../redux/auth/operation';
+import { loginThunk } from '../../redux/auth/operations';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
