@@ -1,0 +1,19 @@
+.color {
+  color: #4e85de;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+}

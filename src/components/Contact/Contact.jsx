@@ -1,8 +1,9 @@
-import { MdPhoneInTalk } from 'react-icons/md';
+import { MdDelete, MdPhoneInTalk } from 'react-icons/md';
 import s from './Contact.module.css';
 import { FaRegUser } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsOps';
+import { deleteContact } from '../../redux/contacts/operation';
+import { Button } from '@mui/material';
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -16,9 +17,14 @@ const Contact = ({ id, name, number }) => {
         <MdPhoneInTalk />
         {number}
       </p>
-      <button className={s.button} onClick={() => dispatch(deleteContact(id))}>
+
+      <Button
+        variant="outlined"
+        onClick={() => dispatch(deleteContact(id))}
+        startIcon={<MdDelete />}
+      >
         Delete
-      </button>
+      </Button>
     </li>
   );
 };

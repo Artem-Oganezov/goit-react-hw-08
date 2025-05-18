@@ -2,7 +2,10 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import s from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsOps';
+import { addContact } from '../../redux/contacts/operation';
+import { MdSend } from 'react-icons/md';
+import { Button } from '@mui/material';
+import toast from 'react-hot-toast';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -13,6 +16,7 @@ const ContactForm = () => {
       number: values.number,
     };
     dispatch(addContact(addTasks));
+    toast.success('contact added successfully!');
 
     options.resetForm();
   };
@@ -49,12 +53,13 @@ const ContactForm = () => {
           </label>
           <label className={s.label}>
             <span>Phone</span>
-            <Field className={s.input} type="number" name="number" />
+            <Field className={s.input} type="tel" name="number" />
             <ErrorMessage className={s.error} name="number" component="span" />
           </label>
-          <button className={s.button} type="submit">
+
+          <Button variant="contained" type="submit" endIcon={<MdSend />}>
             Add contact
-          </button>
+          </Button>
         </Form>
       </Formik>
     </div>

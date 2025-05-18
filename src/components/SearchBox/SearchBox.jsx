@@ -1,6 +1,9 @@
+import { TextField } from '@mui/material';
+import { changeFilter } from '../../redux/filters/slice';
 import s from './SearchBox.module.css';
-import { changeFilter, selectNameFilter } from '../../redux/filtersSlice';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { selectNameFilter } from '../../redux/filters/selectors';
 
 const SearchBox = () => {
   const dispatch = useDispatch();
@@ -8,9 +11,12 @@ const SearchBox = () => {
 
   return (
     <div className={s.search}>
-      <p>Find contacts by name</p>
-      <input
-        className={s.input}
+      <TextField
+        id="standard-textarea"
+        label="Find contacts by name"
+        placeholder="Name"
+        multiline
+        variant="standard"
         value={filter}
         onChange={e => dispatch(changeFilter(e.target.value))}
         type="text"

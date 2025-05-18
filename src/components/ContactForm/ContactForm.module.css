@@ -9,9 +9,11 @@
   border-radius: 8px;
   padding-top: 8px;
   padding-bottom: 8px;
-  background: #0d0d0d;
-  border-top: 3px solid #4e85de;
-  border-bottom: 3px solid #4e85de;
+  border: 1px solid black;
+  box-shadow: #0d0d0d 0px 0px 10px 0px;
+
+  border-top: 3px solid blue;
+  border-bottom: 3px solid blue;
 }
 .label span.error {
   position: absolute;
@@ -34,7 +36,7 @@
   border-radius: 20px;
   width: 150px;
   height: 30px;
-  background-color: #0d0d0d;
+
   border-top: 3px solid #4e85de;
   border-bottom: 3px solid #4e85de;
 }
@@ -47,9 +49,9 @@
   box-shadow: none;
   border-radius: 10px;
   color: #808080;
-  background-color: #0d0d0d;
-  border-top: 3px solid #4e85de;
-  border-bottom: 3px solid #4e85de;
+
+  border-top: 3px solid blue;
+  border-bottom: 3px solid blue;
 }
 
 .label {

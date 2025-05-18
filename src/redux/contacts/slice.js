@@ -1,6 +1,9 @@
 import { createSelector, createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from './contactsOps';
-import { selectNameFilter } from './filtersSlice';
+
+import { addContact, deleteContact, fetchContacts } from './operation';
+import { selectNameFilter } from '../filters/selectors';
+import { selectContacts } from './selectors';
+import { logoutThunk } from '../auth/operation';
 
 const initialState = {
   items: [],
@@ -16,6 +19,7 @@ const slice = createSlice({
       .addCase(addContact.fulfilled, (state, action) => {
         state.items.push(action.payload);
       })
+      .addCase(logoutThunk.fulfilled, () => initialState)
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.items = state.items.filter(item => item.id !== action.payload);
       })
@@ -55,10 +59,6 @@ const slice = createSlice({
       );
   },
 });
-
-export const selectContacts = state => state.contacts.items;
-export const selectLoading = state => state.contacts.loading;
-export const selectError = state => state.contacts.error;
 
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectNameFilter],
